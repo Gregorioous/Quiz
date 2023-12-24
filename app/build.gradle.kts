@@ -44,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
     packaging {
         resources {
@@ -72,33 +72,38 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
 
-    //Splash Api
-    implementation("androidx.core:core-splashscreen:1.0.1")
+// Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
-    //Compose Navigation
-    val nav_version = "2.6.0"
-    implementation("androidx.navigation:navigation-compose:$nav_version")
+    // Extended Icon Library
+    implementation("androidx.compose.material:material-icons-extended:1.0.0-alpha08")
 
-    //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.5.3")
 
-    //Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
-    //Kotlinx Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-
-    //Coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
-
-    //Datastore
+    // DataStore Preferences
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
-    //Compose Foundation
-    implementation("androidx.compose.foundation:foundation:1.4.3")
+    //Ktor core
+    implementation("io.ktor:ktor-client-core:1.6.4")
+    implementation("io.ktor:ktor-client-android:1.6.4")
+    implementation("io.ktor:ktor-client-serialization:1.6.4")
+    implementation("io.ktor:ktor-client-logging:1.6.4")
+    implementation("io.ktor:ktor-client-json:1.6.4")
 
-    //Accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
+    //Room
+    implementation("androidx.room:room-runtime:2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
+    kapt("androidx.room:room-compiler:2.5.0")
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.5.0")
+
+    //gson
+    implementation("com.google.code.gson:gson:2.9.0")
+
+
 }
